@@ -12,7 +12,7 @@ const projects = [
     {
         id: 2,
         name: "Self Driving",
-        description: "Automobiles that can prevent accident to happen. Self-driving cars combine a variety of sensors to perceive their surroundings, such as radar, lidar, sonar, GPS, odometry and inertial measurement units.[1] Advanced control systems interpret sensory information to identify appropriate navigation paths, as well as obstacles and relevant signage.",
+        description: "Automobiles that can prevent accidents to happen. Self-driving cars combine a variety of sensors to perceive their surroundings, such as radar, lidar, sonar, GPS, odometry and inertial measurement units.[1] Advanced control systems interpret sensory information to identify appropriate navigation paths, as well as obstacles and relevant signage.",
         img: require("../images/self-driving.jpg")
     },
     {
