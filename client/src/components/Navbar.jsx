@@ -48,7 +48,8 @@ function NotificationItem(props) {
             <div className="ss">
             <p style={{color:"white"}}> <EventNoteIcon /></p>
             </div>
-            <div className="sm"><p style={{ fontWeight: "600", display: "inline",color:"white"}}> {props.date} | {props.description}</p>
+            <div className="sm">
+            <p style={{ fontWeight: "600", display: "inline",color:"white"}}> {props.date} | {props.description}</p>
             </div>
             </a>
             <hr className="notification-separator" />
