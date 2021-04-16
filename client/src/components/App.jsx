@@ -5,6 +5,7 @@ import Events from "./Events";
 import Footer from "./Footer/Footer";
 import Title from "./Title";
 import Icengine from "./Icengine";
+import Login from "./Login";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
                     <Route path="/projects" component={Projects} />
                     <Route path="/events" component={Events} />
                     <Route path="/icengine" component={Icengine}/>
+                    <Route path="/login" component={Login}/>
                 </Switch>
                 <Footer />
             </div>

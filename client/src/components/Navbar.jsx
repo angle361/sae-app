@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import logo from "../images/saelogohd2.png";
 import EventNoteIcon from '@material-ui/icons/EventNote';
 import GroupIcon from '@material-ui/icons/Group';
@@ -11,11 +11,13 @@ import ListIcon from '@material-ui/icons/List';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import Searchbar from "./Searchbar";
 import SearchIcon from '@material-ui/icons/Search';
+import axios from 'axios';
 
 // const isMobile = useMediaQuery({
 //     query: '(max-device-width: 768px)'
 // });
 
+  
 
 const notifications = [
     {
@@ -71,25 +73,39 @@ function NotificationItem(props) {
 }
 
 function Notifications() {
+    const [notify,setNotify] = useState([]);
+    const apiURL = "http://localhost:5000/notifications";
+    const fetchData = async () => {
+        const response = await axios.get(apiURL);
+        // console.log(response.data.length);
+          setNotify(response.data);
+          //console.log(notify);
+    }
+    useEffect(()=>{fetchData();});
+   // console.log("cvcvfgbfsanyamgbbv");
     const isMobile = useMediaQuery({
         query: '(max-device-width: 768px)'
     });
     return (
+        
         <div >
-            <div className="dropdown " >
-                <button className="btn btn-secondary dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{ border: "1px solid white", position: "relative", float: "right" }}>
+           
+            <div className="dropdown" >
+                <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" 
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{ border: "1px solid white", position: "relative", float: "right" }}>
                     {isMobile ? <NotificationsIcon style={{ fontSize: "1rem" }} /> : "Notifications"}
                 </button>
                 <div className="dropdown-container" >
                     <div className="dropdown-menu dropdown-style" aria-labelledby="dropdownMenuButton">
 
-                        {notifications.map(props =>
+                       {notify.length && notify.map((notification) =>
                             <NotificationItem
-                                key={props.id}
-                                description={props.description}
-                                date={props.date}
+                                key={notification.id}
+                                description={notification.description}
+                                date={notification.date}
                             />
-                        )}
+                        ) }
+                        {/* {!notify.length && <h1>{notify}</h1>} */}
                     </div>
                 </div>
             </div>
@@ -119,22 +135,22 @@ function Navbar() {
             <nav className="navbar navbar-expand-lg navbar-primary pad-mgn fixed-top">
 
                 <div >
-                    <img className="saelogo" src={logo} alt="saelogo" />
+                    <img className="saelogo" src={logo} alt="saelogo" /> 
                     <a className="navbar-brand" href="" >
                         <h6 >{isMobile ? "SAE IIT BHU" : "Society of Automotive Engineers - IIT BHU Varanasi"}</h6>
-                    </a>
+                    </a> 
                 </div>
 
-                {isMobile && <div className="nav-item dropdown">
-                    <Notifications />
-                </div>}
                 <button className="btn navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style={{ border: "1px white solid" }}>
                     <ListIcon style={{ color: "white" }} />
                 </button>
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav ml-auto nav-pills">
-                        
 
+                {isMobile && <li className="nav-item"><Notifications /></li>}
+                            
+                        
+                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul className="navbar-nav nav-pills">
+                        
                         <li className="nav-item">
                             <Link className="nav-link" to="/">Home <HomeIcon style={{ fontSize: "18" }} /></Link>
                         </li>
@@ -154,7 +170,11 @@ function Navbar() {
                         <li className="nav-item">
                             <a className="nav-link" href="#footer">Contact <GroupIcon style={{ fontSize: "20" }} /></a>
                         </li>
-                        {!isMobile && <li className="nav-item dropdown">
+
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/login">Log In <EmojiEventsIcon style={{ fontSize: "19" }} /></Link>
+                        </li> 
+                        {!isMobile && <li className="nav-item">
                             <Notifications />
                         </li>}
 

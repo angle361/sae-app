@@ -94,6 +94,18 @@ hr {
   display: flex;
   float: left;
 }
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 0.5rem;
+    padding-left: 1rem;
+}
+.navbar-expand-lg .navbar-nav {
+    -ms-flex-direction: row;
+    flex-direction: row;
+    padding-left: 100px;
+}
+
+
 .search-box {
   padding-top: 1%;
 }
@@ -109,6 +121,7 @@ hr {
   margin: 0;
   font-size: 1.2rem;
 }
+
 .header-navigator p {
   padding: 0;
   margin: 0;
@@ -125,9 +138,8 @@ hr {
 .btn {
   padding :4px 12px;
   height:34px;
-  width: 50px;
+  width: 150px;
 }
-
 .ss{
   display:inline-block;
   position: absolute;
@@ -140,47 +152,46 @@ hr {
   /* background-color:green; */
   width:380px;
 }
+
 .dropdown-container {
   position: relative;
   /* left: 40px; */
   bottom:"20px";
 }
+
 .dropdown {
   margin-left: 38px;
-  margin-right: 2px;
+  margin-right: 10px;
+  margin-top: 5px;
 }
-
 
 .dropdown-style {
   background-color: black;
   
 }
+
 .dropdown-menu{
   margin-top: 35%;
 
 }
-@media only screen and (max-width: 768px){
-  .dropdown-menu{
-    margin-top: 80%;
-    position: absolute;
-    /* width: 417px; */
-    left:-620%;  
-  }
-}
+
 .dropdown-menu-center {
   left: 70% !important;
   right: auto !important;
   text-align: left !important;
   transform: translate(-50%, 0) !important;
 }
+
 #dropdownMenuButton {
   /* color: black; */
   background-color: black;
 }
+
 .notification-dropdown {
   position: relative;
   right: 10%;
 }
+
 .notification-separator {
   border: none;
   border-top: 1px solid white;
@@ -197,7 +208,7 @@ hr {
   /* fill: currentColor; */
     width: 1em;
     height: 1em;
-    display: inline-block;
+    display: inline;
     font-size: 1.5rem;
     transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
     flex-shrink: 0;
@@ -220,6 +231,7 @@ hr {
   border: 0;
   border-radius: 0;
 }
+
 
 /* title */
 
@@ -257,7 +269,7 @@ hr {
 /* Projects */
 
 #projects {
-  padding: 12% 0 0 0;
+  padding: 2% 0 0 0;
   /* margin-top: 5%;
   margin-left: 0;
   margin-right: 0;
@@ -266,7 +278,7 @@ hr {
 }
 
 #projects h2 {
-  margin-bottom: 8%;
+  margin-bottom: 10px;
 }
 .project-box {
   text-align: center;
@@ -297,7 +309,7 @@ hr {
 .project-card-elements {
   padding: 0;
 }
-
+                                                        /* @media (min-width: 992px) */
 .open {
   background-image: none;
   opacity: 0;
@@ -342,8 +354,7 @@ hr {
 #projects a:hover {
   color: black !important;
 }
-
-
+                                                 /* @media (min-width: 992px) */
 .row-custom {
   position: relative;
   align-items: stretch;
@@ -366,15 +377,15 @@ hr {
   width: 280px;
 }
 
-/* Events */
 
+  /* Events */
 #events {
-  padding: 12% 0 0 0;
+  padding: 2% 0 0 0;
   margin:5% 0 15%;
 }
 
 #events h2 {
-  margin-bottom: 8%;
+  margin-bottom: 2%;
 }
 .event-box {
   text-align: center;
@@ -404,7 +415,7 @@ hr {
 .event-card:hover {
   transform: scaleX(1.2) scaleY(1.2);
 }
-
+                                                             /* @media (min-width: 992px) */
 #events a {
   text-decoration: none !important;
 }
@@ -441,8 +452,7 @@ hr {
   margin-bottom: 10%;
 }
 
-
-/* gallery */
+  /* gallery */
 #gallery {
   text-align: center;
   padding: 2% 1% 2% 1%;
@@ -529,6 +539,21 @@ hr {
   justify-content:normal;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media only screen and (max-width: 768px) {
   /* Navigation Bar */
   .navbar {
@@ -545,7 +570,10 @@ hr {
   .navbar-brand-search {
     padding: initial;
   }
-
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
   .saelogo {
     width: 110px;
     height: 40px;
@@ -553,7 +581,22 @@ hr {
     padding: 0.5%;
     margin-right: 0;
   }
-
+  .btn {
+    padding :4px 12px;
+    height:34px;
+    width: 50px;
+  }
+  .dropdown {
+    margin-left: 38px;
+    margin-right: 2px;
+  }
+  .dropdown-menu{
+    margin-top: 80%;
+    position: absolute;
+    /* width: 417px; */
+    left:-620%;  
+  }
+  
   .header-navigator .pad-mgn {
     padding: 0.1% 1;
     margin: 0;
@@ -659,4 +702,90 @@ hr {
 
  
 
- 
+  @import url('https://fonts.googleapis.com/css?family=Numans');
+
+  /* html,body{
+  background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  font-family: 'Numans', sans-serif;
+  } */
+  
+  .container{
+  height: 100%;
+  align-content: center;
+  }
+  
+  .card{
+  height: 370px;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 400px;
+  background-color: rgba(0,0,0,0.5) !important;
+  }
+  
+  .social_icon span{
+  font-size: 60px;
+  margin-left: 10px;
+  color: #FFC312;
+  }
+  
+  .social_icon span:hover{
+  color: white;
+  cursor: pointer;
+  }
+  
+  .card-header h3{
+  color: white;
+  }
+  
+  .social_icon{
+  position: absolute;
+  right: 20px;
+  top: -45px;
+  }
+  
+  .input-group-prepend span{
+  width: 50px;
+  background-color: #FFC312;
+  color: black;
+  border:0 !important;
+  }
+  
+  input:focus{
+  outline: 0 0 0 0  !important;
+  box-shadow: 0 0 0 0 !important;
+  
+  }
+  
+  .remember{
+  color: white;
+  }
+  
+  .remember input
+  {
+  width: 20px;
+  height: 20px;
+  margin-left: 15px;
+  margin-right: 5px;
+  }
+  
+  .login_btn{
+  color: black;
+  background-color: #FFC312;
+  width: 100px;
+  }
+  
+  .login_btn:hover{
+  color: black;
+  background-color: white;
+  }
+  
+  .links{
+  color: white;
+  }
+  
+  .links a{
+  margin-left: 4px;
+  }
